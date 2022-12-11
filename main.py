@@ -13,7 +13,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--model', type=str,
-                        default='CNN', help='Model to use', choices={'MLP', 'CNN', 'BranchCNN','BranchCNN2'})
+                        default='CNN', help='Model to use', choices={'MLP', 'CNN', 'BranchCNNLarge','BranchCNNShort'})
 
     args = parser.parse_args()
 
@@ -37,10 +37,10 @@ if __name__ == "__main__":
         model = MLP().to('cuda')
     elif args.model=='CNN':
         model = CNN().to('cuda')
-    elif args.model=='BranchCNN':
-        model = BranchCNN().to('cuda')
+    elif args.model=='BranchCNNLarge':
+        model = BranchCNNLarge().to('cuda')
     else:
-        model = BranchCNN2().to('cuda')
+        model = BranchCNNShort().to('cuda')
 
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
