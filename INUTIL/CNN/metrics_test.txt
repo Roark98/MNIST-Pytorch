@@ -1,0 +1,5 @@
+Best metrics: 
+Accuracy: 0.9949
+Recall: 0.9949749826661346
+Precision: 0.9948231978213421
+F1 Score: 0.9948962894977468
